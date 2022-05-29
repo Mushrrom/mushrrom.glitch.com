@@ -31,7 +31,7 @@ $.terminal.defaults.formatters.push(function (string) {
       if (keywords.indexOf(string) != -1) {
         return "[[b;#66ff66;]" + string + "]";
       } else {
-        return "[[b;#ff5050;]" + string + "]";
+        return "[[b;#f934b;]" + string + "]";
       }
     })
     .join("");
