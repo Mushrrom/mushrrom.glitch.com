@@ -29,9 +29,9 @@ $.terminal.defaults.formatters.push(function (string) {
     .split(/((?:\s|&nbsp;)+)/)
     .map(function (string) {
       if (keywords.indexOf(string) != -1) {
-        return "[[b;#66ff66;]" + string + "]";
+        return "[[b;#bcc236;]" + string + "]";
       } else {
-        return "[[b;#f934b;]" + string + "]";
+        return "[[b;#d79921;]" + string + "]";
       }
     })
     .join("");
