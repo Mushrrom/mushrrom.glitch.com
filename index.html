@@ -12,7 +12,7 @@
     <script>
       $("body").terminal(
         {
-          Test: function (){
+          test: function () {
             this.echo("This worked surprisingly");
           },
         },
@@ -20,6 +20,26 @@
           greetings: "My First Web Terminal",
         }
       );
+      // mysql keywords
+      var uppercase = ["TEST",
+    ];
+      var keywords = uppercase.concat(
+        uppercase.map(function (keyword) {
+          return keyword.toLowerCase();
+        })
+      );
+      $.terminal.defaults.formatters.push(function (string) {
+        return string
+          .split(/((?:\s|&nbsp;)+)/)
+          .map(function (string) {
+            if (keywords.indexOf(string) != -1) {
+              return "[[b;blue;]" + string + "]";
+            } else {
+              return string;
+            }
+          })
+          .join("");
+      });
     </script>
   </body>
 </html>
