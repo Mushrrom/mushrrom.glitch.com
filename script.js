@@ -1,27 +1,35 @@
-
 console.log(maketext);
 
-var theme = 0;
+var light = 0;
 
 const terminal = document.querySelector(".terminal");
 
-$("body").terminal (
+$("body").terminal(
   {
-    test: function (term, ) {
-      document.querySelector(".terminal").classList.toggle("light");
-    },
-    cleee: function () {
+    test: function () {
+      if (document.querySelector(".terminal").classList.toggle("light") == "terminal"){
+        light = 1;
+      } else {
+        light = 0
+      }
+
+      this.clear();
     },
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
     },
-    
   },
   {
-    greetings: "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝",
+    greetings:
+      "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝",
     //-------
     prompt: function () {
-      return([maketext("blue", "user")].join("") + maketext("white", "@") + maketext("green", "website") +  maketext("white", ":$ ~ "));
+      return (
+        [maketext("blue", "user")].join("") +
+        maketext("white", "@") +
+        maketext("green", "website") +
+        maketext("white", ":$ ~ ")
+      );
     },
     //----------
   }
@@ -48,12 +56,6 @@ $.terminal.defaults.formatters.push(function (string) {
     .join("");
 });
 
-
-
-
-
-
-
 function maketext(color, text) {
   var colors = {
     blue: "#458588",
@@ -64,10 +66,9 @@ function maketext(color, text) {
     violet: "#b16286",
     white: "#ebdbb2",
     aqua: "#689d6a",
-    
   };
   if (colors[color]) {
-    return '[[;' + colors[color] + ';]' + text + ']';
+    return "[[;" + colors[color] + ";]" + text + "]";
   } else {
     return text;
   }
