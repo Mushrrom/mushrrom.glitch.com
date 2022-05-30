@@ -18,9 +18,6 @@ $("body").terminal(
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
     },
-    clear: function() {
-      this.echo("yes")
-    },
     lvalue: function() {
       this.echo(light);
     }
@@ -39,10 +36,6 @@ $("body").terminal(
       );
      
     },
-    onClear: function () {
-      console.log('');
-      this.echo('Yes');
-    }
     //----------
   }
 );
