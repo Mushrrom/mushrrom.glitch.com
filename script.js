@@ -1,3 +1,24 @@
+function maketext(color, text) {
+  var colors = {
+    blue: "#458588",
+    green: "#98971a",
+    grey: "#a89984",
+    red: "#cc241d",
+    yellow: "#d79921",
+    violet: "#b16286",
+    white: "#ebdbb2",
+  };
+  if (colors[color]) {
+    return '[[;' + colors[color] + ';]' + text + ']';
+  } else {
+    return text;
+  }
+}
+
+console.log(maketext)
+
+
+
 $("body").terminal(
   {
     test: function () {
@@ -11,7 +32,7 @@ $("body").terminal(
     greetings: "My First Web Terminal\n",
     //-------
     prompt: function () {
-      return [maketext["blue", "yes: "]].join("");
+      return([maketext("blue", "user")].join("") + maketext());
     },
     //----------
   }
@@ -36,20 +57,6 @@ $.terminal.defaults.formatters.push(function (string) {
     .join("");
 });
 
-function maketext(color, text) {
-  var colors = {
-    blue: "#458588",
-    green: "#98971a",
-    grey: "#a89984",
-    red: "#cc241d",
-    yellow: "#d79921",
-    violet: "#b16286",
-    white: "#ebdbb2",
-  };
-  if (colors[color]) {
-    return( '[[;' + colors[color] +';]' + text + ']');
-  }
-  else {
-    return(text);
-  }
-}
+
+
+
