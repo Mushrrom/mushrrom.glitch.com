@@ -7,7 +7,7 @@ const terminal = document.querySelector(".terminal");
 
 $("body").terminal (
   {
-    test: function () {
+    test: function (term, ) {
       document.querySelector(".terminal").classList.toggle("light");
     },
     cleee: function () {
@@ -26,6 +26,7 @@ $("body").terminal (
     //----------
   }
 );
+
 // mysql keywords
 var uppercase = ["TEST", "TEST2", "CLEAR"];
 var keywords = uppercase.concat(
@@ -33,6 +34,7 @@ var keywords = uppercase.concat(
     return keyword.toLowerCase();
   })
 );
+
 $.terminal.defaults.formatters.push(function (string) {
   return string
     .split(/((?:\s|&nbsp;)+)/)
