@@ -5,8 +5,10 @@ var light = 0;
 const terminal = document.querySelector(".terminal");
 
 $("body").terminal(
+  clear = false ;
   {
-    test: function () {
+    
+    theme: function () {
       if ((document.querySelector(".terminal").classList.value) == "terminal"){
         light = 1;
       } else {
@@ -18,20 +20,22 @@ $("body").terminal(
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
     },
+    
     lvalue: function() {
       this.echo(light);
     }
+    
   },
   {
     greetings:
-      "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝",
+      maketext("fg", "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝"),
     //-------
     prompt: function () {
       return (
         [maketext("blue", "user")].join("") +
-        maketext("white", "@") +
-        maketext("green", "website") +
-        maketext("white", ":$ ~ ")
+        maketext("fg", "@") +
+        maketext("green", "mushrrom.glich.me") +
+        maketext("fg", ":$ ~ ")
       );
     },
     //----------
@@ -39,7 +43,7 @@ $("body").terminal(
 );
 
 // mysql keywords
-var uppercase = ["TEST", "TEST2", "CLEAR"];
+var uppercase = ["THEME", "TEST2", "CLEAR"];
 var keywords = uppercase.concat(
   uppercase.map(function (keyword) {
     return keyword.toLowerCase();
@@ -76,6 +80,7 @@ function maketext(color, text) {
     white: "#ebdbb2",
     aqua: "#689d6a",
     fg: fgcolour,
+    grey: greycolour,
     
   };
   if (colors[color]) {
