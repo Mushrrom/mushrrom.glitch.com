@@ -69,5 +69,3 @@ function maketext(color, text) {
     return text;
   }
 }
-function greetings(term) {
-        term.echo('reset');
