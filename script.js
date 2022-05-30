@@ -1,16 +1,23 @@
 console.log(maketext);
 
 var light = 0;
-
+var banner = "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n\
+████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n\
+██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n\
+██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n\
+██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n\
+╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝\n\
+Type sumfetch for a summary\n\
+Type help for a list of all available commands";
 const terminal = document.querySelector(".terminal");
 
 $("body").terminal(
   {
     theme: function () {
-      if ((document.querySelector(".terminal").classList.value) == "terminal"){
+      if (document.querySelector(".terminal").classList.value == "terminal") {
         light = 1;
       } else {
-        light = 0
+        light = 0;
       }
       document.querySelector(".terminal").classList.toggle("light");
       this.clear();
@@ -18,14 +25,19 @@ $("body").terminal(
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
     },
-    lvalue: function() {
+    test3: function () {
+      var link = document.createElement("a");
+      link.textContent = "Test website";
+      link.href = "https://example.com";
+
+      this.echo(link);
+    },
+    lvalue: function () {
       this.echo(light);
-    }
-    
+    },
   },
   {
-    greetings:
-      maketext("fg", "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝"),
+    greetings: maketext("fg", banner),
     //-------
     prompt: function () {
       return (
@@ -34,7 +46,6 @@ $("body").terminal(
         maketext("green", "mushrrom.glich.me") +
         maketext("fg", ":$ ~ ")
       );
-     
     },
     //----------
   }
@@ -63,11 +74,11 @@ $.terminal.defaults.formatters.push(function (string) {
 
 function maketext(color, text) {
   if (light === 1) {
-    var fgcolour = "#3c3836"
-    var greycolour = "#7c6f64"
+    var fgcolour = "#3c3836";
+    var greycolour = "#7c6f64";
   } else {
-    var fgcolour = "#ebdbb2"
-    var greycolour = "#a89984"
+    var fgcolour = "#ebdbb2";
+    var greycolour = "#a89984";
   }
   var colors = {
     blue: "#458588",
@@ -79,7 +90,6 @@ function maketext(color, text) {
     aqua: "#689d6a",
     fg: fgcolour,
     grey: greycolour,
-    
   };
   if (colors[color]) {
     return "[[;" + colors[color] + ";]" + text + "]";
