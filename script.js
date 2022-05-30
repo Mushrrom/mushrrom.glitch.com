@@ -7,6 +7,7 @@ function maketext(color, text) {
     yellow: "#d79921",
     violet: "#b16286",
     white: "#ebdbb2",
+    aqua: "#689d6a",
   };
   if (colors[color]) {
     return '[[;' + colors[color] + ';]' + text + ']';
@@ -32,7 +33,7 @@ $("body").terminal(
     greetings: "My First Web Terminal\n",
     //-------
     prompt: function () {
-      return([maketext("blue", "user")].join("") + maketext());
+      return([maketext("blue", "user")].join("") + maketext("white", "@") + maketext("green", "website") +  maketext("white", ":$ ~ "));
     },
     //----------
   }
@@ -49,9 +50,9 @@ $.terminal.defaults.formatters.push(function (string) {
     .split(/((?:\s|&nbsp;)+)/)
     .map(function (string) {
       if (keywords.indexOf(string) != -1) {
-        return "[[b;#98971a;]" + string + "]";
+        return maketext("aqua", string);
       } else {
-        return "[[b;#cc241d;]" + string + "]";
+        return maketext("red", string);
       }
     })
     .join("");
