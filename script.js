@@ -4,13 +4,15 @@ console.log(maketext)
 
 var theme = 0
 
+const terminal = document.querySelector(".terminal")
+
 $("body").terminal(
   {
     test: function () {
       this.echo("[[b;#aaaaaa;]" + "This worked surprisingly" + "]");
     },
-    test2: function (input) {
-      this.echo(input || false + "  Worked?????");
+    test2: function (input = "nothing") {
+      this.echo(input + "  test;)");
     },
     
   },

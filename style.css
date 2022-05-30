@@ -1,5 +1,7 @@
 .terminal {
   --background: #282828;
-  /*--background: #fbf1c7;*/
 }
 
+.terminal .light {
+  --background: #fbf1c7;
+}
