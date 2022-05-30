@@ -2,7 +2,7 @@ console.log(maketext);
 
 var light = 0;
 var banner =
-  "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n\
+  "\n███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n\
 ████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n\
 ██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n\
 ██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n\
@@ -26,6 +26,12 @@ $("body").terminal(
     },
     banner: function () {
       this.echo(maketext("fg", banner));
+    },
+    help: function () {
+      this.echo(maketext("fg", "theme banner sumfetch clear credits help"))
+    },
+    credits: function() {
+      this.echo(maketext("fg", "jQuery Terminal: https://terminal.jcubic.pl/\ncolour palette: https://github.com/morhetz/gruvbox\nmushroom ascii art: https://asciiart.eu"))
     },
     sumfetch: function () {
       this.echo(maketext("fg", 
@@ -60,7 +66,7 @@ $("body").terminal(
 );
 
 // mysql keywords
-var uppercase = ["THEME", "BANNER", "CLEAR", "SUMFETCH"];
+var uppercase = ["THEME", "BANNER", "CLEAR", "SUMFETCH", "HELP", "CREDITS"];
 var keywords = uppercase.concat(
   uppercase.map(function (keyword) {
     return keyword.toLowerCase();
