@@ -5,13 +5,12 @@ var theme = 0;
 
 const terminal = document.querySelector(".terminal");
 
-$("body").terminal                 (
+$("body").terminal (
   {
     test: function () {
       document.querySelector(".terminal").classList.toggle("light");
     },
     cleee: function () {
-      term.clear();
     },
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
