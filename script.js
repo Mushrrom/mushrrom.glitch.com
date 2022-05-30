@@ -11,8 +11,7 @@ $("body").terminal(
     greetings: "My First Web Terminal\n",
     //-------
     prompt: function () {
-      return [
-        "[[b;#aaaaaa;]Yes:] "].join('');
+      return ["[[b;#aaaaaa;]Yes:] "].join("");
     },
     //----------
   }
@@ -29,16 +28,23 @@ $.terminal.defaults.formatters.push(function (string) {
     .split(/((?:\s|&nbsp;)+)/)
     .map(function (string) {
       if (keywords.indexOf(string) != -1) {
-        return "[[b;#bcc236;]" + string + "]";
+        return "[[b;#98971a;]" + string + "]";
       } else {
-        return "[[b;#d79921;]" + string + "]";
+        return "[[b;#cc241d;]" + string + "]";
       }
     })
     .join("");
 });
 
-function myFunction(p1, p2) {
-  return p1 * p2;   // The function returns the product of p1 and p2
-};
-
-console.log(myFunction(5, 6));
+function maketext(color, text) {
+  var colors = {
+    blue: "#458588",
+    green: "#98971a",
+    grey: "#999",
+    red: "#A00",
+    yellow: "#FF5",
+    violet: "#a320ce",
+    white: "#fff",
+  };
+  //return p1 * p2;   // The function returns the product of p1 and p2
+}
