@@ -9,7 +9,7 @@ const terminal = document.querySelector(".terminal")
 $("body").terminal(
   {
     test: function () {
-      this.echo("[[b;#aaaaaa;]" + "This worked surprisingly" + "]");
+      document.querySelector(".terminal").classList.toggle("light");
     },
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
@@ -26,7 +26,7 @@ $("body").terminal(
   }
 );
 // mysql keywords
-var uppercase = ["TEST", "TEST2"];
+var uppercase = ["TEST", "TEST2", "CLEAR"];
 var keywords = uppercase.concat(
   uppercase.map(function (keyword) {
     return keyword.toLowerCase();
@@ -61,6 +61,7 @@ function maketext(color, text) {
     violet: "#b16286",
     white: "#ebdbb2",
     aqua: "#689d6a",
+    
   };
   if (colors[color]) {
     return '[[;' + colors[color] + ';]' + text + ']';
@@ -68,3 +69,5 @@ function maketext(color, text) {
     return text;
   }
 }
+function greetings(term) {
+        term.echo('reset');

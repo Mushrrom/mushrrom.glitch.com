@@ -1,7 +1,7 @@
-.terminal {
+.terminal .dark{
   --background: #282828;
 }
 
-.terminal .light {
-  --background: #fbf1c7;
+.light {
+  --background: #fbf1c7 !important;
 }
