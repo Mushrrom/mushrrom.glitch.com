@@ -5,9 +5,7 @@ var light = 0;
 const terminal = document.querySelector(".terminal");
 
 $("body").terminal(
-  clear = false ;
   {
-    
     theme: function () {
       if ((document.querySelector(".terminal").classList.value) == "terminal"){
         light = 1;
@@ -20,7 +18,9 @@ $("body").terminal(
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
     },
-    
+    clear: function() {
+      this.echo("yes")
+    },
     lvalue: function() {
       this.echo(light);
     }
@@ -37,7 +37,12 @@ $("body").terminal(
         maketext("green", "mushrrom.glich.me") +
         maketext("fg", ":$ ~ ")
       );
+     
     },
+    onClear: function () {
+      console.log('');
+      this.echo('Yes');
+    }
     //----------
   }
 );
