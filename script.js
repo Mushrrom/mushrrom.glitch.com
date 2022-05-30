@@ -23,7 +23,7 @@ $("body").terminal(
       this.clear();
     },
     test2: function (input = "nothing") {
-      this.echo(input + "  test;)");
+      this.echo(input + "  yes;)");
     },
     test3: function () {
       var link = document.createElement("a");
