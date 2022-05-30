@@ -1,24 +1,8 @@
-function maketext(color, text) {
-  var colors = {
-    blue: "#458588",
-    green: "#98971a",
-    grey: "#a89984",
-    red: "#cc241d",
-    yellow: "#d79921",
-    violet: "#b16286",
-    white: "#ebdbb2",
-    aqua: "#689d6a",
-  };
-  if (colors[color]) {
-    return '[[;' + colors[color] + ';]' + text + ']';
-  } else {
-    return text;
-  }
-}
+
 
 console.log(maketext)
 
-
+var theme = 0
 
 $("body").terminal(
   {
@@ -26,8 +10,9 @@ $("body").terminal(
       this.echo("[[b;#aaaaaa;]" + "This worked surprisingly" + "]");
     },
     test2: function (input) {
-      this.echo(input + "  Worked?????");
+      this.echo(input || false + "  Worked?????");
     },
+    
   },
   {
     greetings: "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝",
@@ -61,3 +46,23 @@ $.terminal.defaults.formatters.push(function (string) {
 
 
 
+
+
+
+function maketext(color, text) {
+  var colors = {
+    blue: "#458588",
+    green: "#98971a",
+    grey: "#a89984",
+    red: "#cc241d",
+    yellow: "#d79921",
+    violet: "#b16286",
+    white: "#ebdbb2",
+    aqua: "#689d6a",
+  };
+  if (colors[color]) {
+    return '[[;' + colors[color] + ';]' + text + ']';
+  } else {
+    return text;
+  }
+}
