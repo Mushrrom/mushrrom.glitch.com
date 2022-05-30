@@ -11,7 +11,7 @@ $("body").terminal(
     greetings: "My First Web Terminal\n",
     //-------
     prompt: function () {
-      return ["[[b;#aaaaaa;]Yes:] "].join("");
+      return [maketext["blue", "yes: "]].join("");
     },
     //----------
   }
@@ -40,11 +40,16 @@ function maketext(color, text) {
   var colors = {
     blue: "#458588",
     green: "#98971a",
-    grey: "#999",
-    red: "#A00",
-    yellow: "#FF5",
-    violet: "#a320ce",
-    white: "#fff",
+    grey: "#a89984",
+    red: "#cc241d",
+    yellow: "#d79921",
+    violet: "#b16286",
+    white: "#ebdbb2",
   };
-  //return p1 * p2;   // The function returns the product of p1 and p2
+  if (colors[color]) {
+    return( '[[;' + colors[color] +';]' + text + ']');
+  }
+  else {
+    return(text);
+  }
 }
