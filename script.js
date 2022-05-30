@@ -22,19 +22,26 @@ $("body").terminal(
       document.querySelector(".terminal").classList.toggle("light");
       this.clear();
     },
-    test2: function (input = "nothing") {
-      this.echo(input + "  yes;)");
+    banner: function() {
+      this.echo(maketext("fg", banner))
     },
-    test3: function () {
-      var link = document.createElement("a");
-      link.textContent = "Test website";
-      link.href = "https://example.com";
-
-      this.echo(link);
-    },
-    lvalue: function () {
-      this.echo(light);
-    },
+    sumfetch: function() {
+      this.echo("         ___..._        Sumfetch - summary display\n\
+    _,--'       `-.    ----------\n\
+  ,'.  .            \   About me:\n\
+,/:. .     .       .'    - Mushrrom: (un)professional developer\n\
+|;..  .      _..--'      - experience: Python, HTML, CSS, JavaScript\n\
+`--:...-,-'""\            • terminal apps, discord.py, (bad) websites\n\
+        |:.  `.          - Github: https://github.com/Mushrrom\n\
+        l;.   l          - Contact: mushrrom@pm.me \n\
+        `|:.   |        ----------\n\
+         |:.   `.,		Projects:\n\
+        .l;.    j, ,    - OpenAI Discord bot: https://github.com/Mushrrom/Openai-discord-bot\n\
+     `. \`;:.   //,/    - Personal website: \n\
+      .\\)`;,|\'/(      ----------
+       ` `itz `(,       'Computers are like air conditioners, when you use windows they become useless')\n\")
+    }
+    
   },
   {
     greetings: maketext("fg", banner),
@@ -52,7 +59,7 @@ $("body").terminal(
 );
 
 // mysql keywords
-var uppercase = ["THEME", "TEST2", "CLEAR"];
+var uppercase = ["THEME", "BANNER", "CLEAR", "SUMFETCH"];
 var keywords = uppercase.concat(
   uppercase.map(function (keyword) {
     return keyword.toLowerCase();
