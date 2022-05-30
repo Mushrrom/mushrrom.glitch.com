@@ -7,17 +7,20 @@ const terminal = document.querySelector(".terminal");
 $("body").terminal(
   {
     test: function () {
-      if (document.querySelector(".terminal").classList.toggle("light") == "terminal"){
+      if ((document.querySelector(".terminal").classList.value) == "terminal"){
         light = 1;
       } else {
         light = 0
       }
-
+      document.querySelector(".terminal").classList.toggle("light");
       this.clear();
     },
     test2: function (input = "nothing") {
       this.echo(input + "  test;)");
     },
+    lvalue: function() {
+      this.echo(light);
+    }
   },
   {
     greetings:
@@ -57,15 +60,23 @@ $.terminal.defaults.formatters.push(function (string) {
 });
 
 function maketext(color, text) {
+  if (light === 1) {
+    var fgcolour = "#3c3836"
+    var greycolour = "#7c6f64"
+  } else {
+    var fgcolour = "#ebdbb2"
+    var greycolour = "#a89984"
+  }
   var colors = {
     blue: "#458588",
     green: "#98971a",
-    grey: "#a89984",
     red: "#cc241d",
     yellow: "#d79921",
     violet: "#b16286",
     white: "#ebdbb2",
     aqua: "#689d6a",
+    fg: fgcolour,
+    
   };
   if (colors[color]) {
     return "[[;" + colors[color] + ";]" + text + "]";
