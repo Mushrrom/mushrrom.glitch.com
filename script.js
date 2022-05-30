@@ -1,12 +1,14 @@
 console.log(maketext);
 
 var light = 0;
-var banner = "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n\
+var banner =
+  "███╗   ███╗██╗   ██╗███████╗██╗  ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗\n\
 ████╗ ████║██║   ██║██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║\n\
 ██╔████╔██║██║   ██║███████╗███████║██████╔╝██████╔╝██║   ██║██╔████╔██║\n\
 ██║╚██╔╝██║██║   ██║╚════██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║╚██╔╝██║\n\
 ██║ ╚═╝ ██║╚██████╔╝███████║██║  ██║██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║\n\
 ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝\n\
+\
 Type sumfetch for a summary\n\
 Type help for a list of all available commands";
 const terminal = document.querySelector(".terminal");
@@ -22,26 +24,25 @@ $("body").terminal(
       document.querySelector(".terminal").classList.toggle("light");
       this.clear();
     },
-    banner: function() {
-      this.echo(maketext("fg", banner))
+    banner: function () {
+      this.echo(maketext("fg", banner));
     },
-    sumfetch: function() {
-      this.echo("         ___..._        Sumfetch - summary display\n\
+    sumfetch: function () {
+      this.echo(maketext("fg", 
+        "         ___..._        Sumfetch - summary display\n\
     _,--'       `-.    ----------\n\
-  ,'.  .            \   About me:\n\
+  ,'.  .               About me:\n\
 ,/:. .     .       .'    - Mushrrom: (un)professional developer\n\
 |;..  .      _..--'      - experience: Python, HTML, CSS, JavaScript\n\
-`--:...-,-'""\            • terminal apps, discord.py, (bad) websites\n\
+`--:...-,-'''            • terminal apps, discord.py, (bad) websites\n\
         |:.  `.          - Github: https://github.com/Mushrrom\n\
         l;.   l          - Contact: mushrrom@pm.me \n\
         `|:.   |        ----------\n\
          |:.   `.,		Projects:\n\
         .l;.    j, ,    - OpenAI Discord bot: https://github.com/Mushrrom/Openai-discord-bot\n\
-     `. \`;:.   //,/    - Personal website: \n\
-      .\\)`;,|\'/(      ----------
-       ` `itz `(,       'Computers are like air conditioners, when you use windows they become useless')\n\")
-    }
-    
+     `. `;:.   //,/    - Personal website: \n\
+      .\\)`;,|'/(      ----------\n       ` `itz `(,       'Computers are like air conditioners, when you use windows they become useless'"));
+    },
   },
   {
     greetings: maketext("fg", banner),
